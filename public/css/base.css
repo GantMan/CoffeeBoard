@@ -13,6 +13,7 @@ body {
   padding: 90px 0 10px 0;
   margin: -100px auto 0 auto;
   background-color: #71c535;
+  border-radius: 5px;
 }
 
 h1 {
@@ -36,4 +37,12 @@ hr {
 
 p {
   padding: 0 20px;
+}
+
+.file {
+  display: inline-block;
+  background-color: #0f0;
+  padding: 2px 6px;
+  border-radius: 5px;
+  margin: 0 10px;
 }
