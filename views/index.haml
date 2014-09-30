@@ -1,3 +1,9 @@
 %h1 Scroll Select
+%h2 Choose your Coffee-Board image
+%hr
 %p
-  = "Yay" + "y" * 20
+  %strong Scroll Files
+  %ul
+    - @image_files.each do |file|
+      %li
+        = file
