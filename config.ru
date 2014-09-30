@@ -3,5 +3,6 @@ require 'bundler'
 
 Bundler.require
 
-require './index'
+require './coffee_board'
+use Rack::Static, :urls => ["/css", "/images"], :root => "public"
 run CoffeeBoard
