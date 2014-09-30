@@ -1,5 +1,5 @@
 class CoffeeBoard < Sinatra::Base
   get '/' do
-      'Coffee-Board'
+    haml :index, :format => :html5
   end
 end
