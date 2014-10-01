@@ -3,7 +3,7 @@
 %hr
 %p
   %strong Scroll Files
-  %ul
+  %ul.scroll_list
     - @image_files.each do |file|
       %li.file
-        = file
+        = link_to "/set_scroll/#{file}", file

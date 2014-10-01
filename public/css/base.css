@@ -46,3 +46,8 @@ p {
   border-radius: 5px;
   margin: 0 10px;
 }
+
+.file a {
+  text-decoration: none;
+  color: #f00;
+}
