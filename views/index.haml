@@ -7,3 +7,8 @@
     - @image_files.each do |file|
       %li.file
         = link_to "/set_scroll/#{file}", file
+
+%hr
+%form{:action=>"/upload",:method=>"post"   ,:enctype=>"multipart/form-data"}
+  %input{:type=>"file",:name=>"file"}
+  %input{:type=>"submit",:value=>"Upload"}
