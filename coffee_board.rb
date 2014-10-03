@@ -8,6 +8,7 @@ class CoffeeBoard < Sinatra::Base
 
   get '/set_scroll/:file' do
     # run magical code to change scroller to params[:file]
+    `service coffeeboard stop && service coffeeboard start scroll_file=#{params[:file]}`
     redirect back
   end
 
