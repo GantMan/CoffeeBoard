@@ -1,3 +1,6 @@
+# So this file can be run from any folder
+Dir.chdir(File.dirname(File.expand_path(__FILE__)))
+
 require 'rubygems'
 require 'bundler'
 
