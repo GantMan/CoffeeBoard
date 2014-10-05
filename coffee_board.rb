@@ -7,8 +7,12 @@ class CoffeeBoard < Sinatra::Base
   end
 
   get '/set_scroll/:file' do
-    # run magical code to change scroller to params[:file]
-    `service coffeeboard stop && service coffeeboard start scroll_file=#{params[:file]}`
+    # kill previous runs
+    `sudo pkill led-matrix`
+    # run in a forked process
+    command = "sudo /home/pi/display16x32/rpi-rgb-led-matrix/led-matrix 1 #{SCROLL_FOLDER}/#{params[:file]}"
+    fork { exec command }
+
     redirect back
   end
 
@@ -22,7 +26,7 @@ class CoffeeBoard < Sinatra::Base
 
     filename = File.join(SCROLL_FOLDER, params[:file][:filename])
     File.write(filename, params[:file][:tempfile].read)
-    "Upload complete"
+    redirect back
   end
 
 
