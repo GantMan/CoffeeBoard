@@ -1,5 +1,6 @@
 class CoffeeBoard < Sinatra::Base
   SCROLL_FOLDER = "./scroll_files"
+  CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
 
   get '/' do
     @image_files = get_all_scrollers
@@ -10,7 +11,7 @@ class CoffeeBoard < Sinatra::Base
     # kill previous runs
     `sudo pkill led-matrix`
     # run in a forked process
-    command = "sudo /home/pi/display16x32/rpi-rgb-led-matrix/led-matrix 1 #{SCROLL_FOLDER}/#{params[:file]}"
+    command = "sudo #{CODE_FOLDER}/led-matrix 1 #{SCROLL_FOLDER}/#{params[:file]}"
     fork { exec command }
 
     redirect back
