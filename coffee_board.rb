@@ -31,6 +31,16 @@ class CoffeeBoard < Sinatra::Base
   end
 
 
+  def convert_and_size file
+    # Get info
+    # info = `identify colorbar.png`.split
+    # info[1] - "normalized and identified file format"
+    # info[2].split("x")[1] - "Image height"
+
+    # Convert to PPM and set height to 16px
+    # `convert awesome.jpg -resize x16 awesome.ppm`
+  end
+
   helpers do
     def link_to(url,text=url,opts={})
       attributes = ""
