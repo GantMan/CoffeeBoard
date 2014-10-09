@@ -5,6 +5,7 @@ GEM
     eventmachine (1.0.3)
     haml (4.0.5)
       tilt
+    mini_magick (4.0.0.rc)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
@@ -24,6 +25,7 @@ PLATFORMS
 
 DEPENDENCIES
   haml
+  mini_magick (~> 4.0.0.rc)
   rake
   sinatra
   thin

@@ -11,7 +11,7 @@ class CoffeeBoard < Sinatra::Base
     # kill previous runs
     `sudo pkill led-matrix`
     # run in a forked process
-    command = "sudo #{CODE_FOLDER}/led-matrix 1 #{SCROLL_FOLDER}/#{params[:file]}"
+    command = "sudo #{CODE_FOLDER}/led-matrix 1 #{SCROLL_FOLDER}/#{params[:file]}.ppm"
     fork { exec command }
 
     redirect back
@@ -19,26 +19,33 @@ class CoffeeBoard < Sinatra::Base
 
   def get_all_scrollers
     images = ["#{SCROLL_FOLDER}/*.ppm"]
-    FileList[*images].map {|file| file.match('([^\/]+)\..+$')[0]}
+    FileList[*images].map {|file| get_file_name file}
   end
 
   post '/upload' do
     return "No file selected" if params[:file].nil?
 
-    filename = File.join(SCROLL_FOLDER, params[:file][:filename])
-    File.write(filename, params[:file][:tempfile].read)
+    uploaded_file = params[:file][:tempfile].path
+    name = get_file_name(params[:file][:filename])
+    process_ppm(uploaded_file, name)
+
     redirect back
   end
 
+  def get_file_name file_path
+    file_path.match('([^\/]+)\..+$')[1]
+  end
 
-  def convert_and_size file
-    # Get info
-    # info = `identify colorbar.png`.split
-    # info[1] - "normalized and identified file format"
-    # info[2].split("x")[1] - "Image height"
+  def process_ppm file, name
+    image = MiniMagick::Image.open(file)
 
-    # Convert to PPM and set height to 16px
-    # `convert awesome.jpg -resize x16 awesome.ppm`
+    # Assure format converted to PPM
+    image.format "PPM" unless image.type == "PPM"
+
+    # Assure size is at least 16 high
+    image.resize "x16" if image.height > 16
+
+    image.write "#{SCROLL_FOLDER}/#{name}.ppm"
   end
 
   helpers do
