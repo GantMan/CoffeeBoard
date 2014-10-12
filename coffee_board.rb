@@ -1,9 +1,6 @@
 class CoffeeBoard < Sinatra::Base
   include CoffeeImageUtils
 
-  SCROLL_FOLDER = "./scroll_files"
-  CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
-
   get '/' do
     @image_files = get_all_scrollers
     haml :index, :format => :html5, :layout => :simple_layout
