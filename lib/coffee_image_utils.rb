@@ -1,4 +1,6 @@
 module CoffeeImageUtils
+  SCROLL_FOLDER = "./scroll_files"
+  CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
 
   SCROLL_FOLDER = "./scroll_files"
   CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
