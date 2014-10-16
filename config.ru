@@ -6,7 +6,7 @@ require 'bundler'
 
 Bundler.require
 
-# require all lib files
+# require all lib files and subfolder files
 Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each {|file| require file }
 require './coffee_board'
 
