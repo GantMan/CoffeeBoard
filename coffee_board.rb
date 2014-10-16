@@ -1,5 +1,6 @@
 class CoffeeBoard < Sinatra::Base
   include CoffeeImageUtils
+  helpers CoffeeHelpers
 
   SCROLL_FOLDER = "./scroll_files"
   CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
@@ -34,11 +35,4 @@ class CoffeeBoard < Sinatra::Base
     redirect back
   end
 
-  helpers do
-    def link_to(url,text=url,opts={})
-      attributes = ""
-      opts.each { |key,value| attributes << key.to_s << "=\"" << value << "\" "}
-      "<a href=\"#{url}\" #{attributes}>#{text}</a>"
-    end
-  end
 end

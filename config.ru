@@ -7,7 +7,7 @@ require 'bundler'
 Bundler.require
 
 # require all lib files
-Dir[File.dirname(__FILE__) + '/lib/*.rb'].each {|file| require file }
+Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each {|file| require file }
 require './coffee_board'
 
 use Rack::Static, :urls => ["/css", "/images"], :root => "public"
