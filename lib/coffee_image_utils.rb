@@ -2,9 +2,6 @@ module CoffeeImageUtils
   SCROLL_FOLDER = "./scroll_files"
   CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
 
-  SCROLL_FOLDER = "./scroll_files"
-  CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
-
   def get_file_name file_path
     file_path.match('([^\/]+)\..+$')[1]
   end
