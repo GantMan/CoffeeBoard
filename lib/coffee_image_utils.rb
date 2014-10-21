@@ -14,7 +14,7 @@ module CoffeeImageUtils
     image.format "PPM" unless image.type == "PPM"
 
     # Assure size is at least 16 high
-    image.resize "x16" if image.height > 16
+    image.resize "x#{BOARD_HEIGHT}" if image.height > BOARD_HEIGHT
 
     image.write "#{SCROLL_FOLDER}/#{name}.ppm"
   end

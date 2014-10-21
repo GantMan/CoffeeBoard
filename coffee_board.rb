@@ -3,11 +3,13 @@ class CoffeeBoard < Sinatra::Base
   helpers CoffeeHelpers
 
   get '/' do
+    protected! unless PUBLIC_VIEW
     @image_files = get_all_scrollers
     haml :index, :format => :html5, :layout => :simple_layout
   end
 
   get '/set_scroll/:file' do
+    protected! unless PUBLIC_CHANGE
     # kill previous runs
     `sudo pkill led-matrix`
     # run in a forked process
@@ -18,6 +20,7 @@ class CoffeeBoard < Sinatra::Base
   end
 
   post '/upload' do
+    protected! unless PUBLIC_UPLOAD
     return "No file selected" if params[:file].nil?
 
     uploaded_file = params[:file][:tempfile].path
