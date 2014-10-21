@@ -11,7 +11,7 @@ CoffeeBoard
 
 * Also make sure you've installed imagemagick with `sudo apt-get install imagemagick`
 
-* Then make sure you have Ruby ready to roll.
+* Then make sure you have [Ruby ready to roll](http://www.iconoclastlabs.com/blog/ruby-on-rails-on-the-raspberry-pi-b-with-rbenv).
 
 #### Assure it runs on startup
 When editing the `/etc/rc.local` to kick off the Sinatra app with this explicit command.
