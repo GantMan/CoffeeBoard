@@ -2,10 +2,16 @@
 %html
   %head
     %title Coffee-Board
+    %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", rel: "stylesheet"}
+    %link{href: "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css", rel: "stylesheet"}
     %link{:href => "css/base.css", :media => "all", :rel => "stylesheet"}
+
+    %script{src: "https://code.jquery.com/jquery-2.1.1.min.js"}
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"}
   %body
-    .header
-      %img{src:"images/header.png", alt: "Coffee Board Header"}
-    .content
-      = yield
-      = haml :upload
+    .container
+      .header.col-md-10.col-md-offset-1
+        %img{src:"images/header.png", alt: "Coffee Board Header"}
+      .content
+        = yield
+        = haml :upload
