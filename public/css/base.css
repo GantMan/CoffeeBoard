@@ -4,7 +4,7 @@ body {
 
 .header {
   background-image: url(../images/header.png);
-  min-height: 350px;
+  min-height: 305px;
   margin-bottom: 10px;
   margin-top: 10px;
   border-radius: 10px;
@@ -29,4 +29,8 @@ hr {
 .file a {
   text-decoration: none;
   color: #f00;
+}
+
+.panel-body img {
+  width: 100%;
 }
