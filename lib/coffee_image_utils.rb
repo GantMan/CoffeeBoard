@@ -26,7 +26,7 @@ module CoffeeImageUtils
   end
 
   def remove file
-    p "REMOVE #{file}"
+    File.delete("#{SCROLL_FOLDER}/#{file}.ppm")
   end
   module_function :remove
 
