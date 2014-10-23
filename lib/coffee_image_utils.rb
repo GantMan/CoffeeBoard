@@ -25,4 +25,9 @@ module CoffeeImageUtils
     FileList[*images].map {|file| get_file_name file}
   end
 
+  def remove file
+    p "REMOVE #{file}"
+  end
+  module_function :remove
+
 end

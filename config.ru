@@ -11,5 +11,5 @@ Dir[File.dirname(__FILE__) + '/lib/**/*.rb'].each {|file| require file }
 require './config/settings.rb'
 require './coffee_board'
 
-use Rack::Static, :urls => ["/css", "/images"], :root => "public"
+use Rack::Static, :urls => ["/css", "/images", "/javascript"], :root => "public"
 run CoffeeBoard

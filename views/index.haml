@@ -12,5 +12,4 @@
             %hr
             .row.center-block
               = link_to "/set_scroll/#{file}", "<i class='fa fa-check-circle-o fa-2x'></i>", class: "btn btn-xs btn-primary col-md-5 col-md-offset-1"
-              = link_to "#", "<i class='fa fa-trash-o fa-2x'></i>", class: "btn btn-xs btn-danger col-md-5 col-md-offset-1"
-
+              = link_to "#", "<i class='fa fa-trash-o fa-2x'></i>", :class => "btn btn-xs btn-danger col-md-5 col-md-offset-1", :'data-toggle' => "confirmation-popout", :'data-placement' => "bottom", :'data-href' => "/delete/#{file}"

@@ -30,4 +30,10 @@ class CoffeeBoard < Sinatra::Base
     redirect back
   end
 
+  get '/delete/:file' do
+    protected! unless PUBLIC_DELETE
+    CoffeeImageUtils::remove(params[:file])
+    redirect back
+  end
+
 end
