@@ -11,7 +11,7 @@
   %body
     .container
       .header.col-md-10.col-md-offset-1
-        %img{src:"images/header.png", alt: "Coffee Board Header"}
-      .content
+      .row.sitecontent.col-md-10.col-md-offset-1
         = yield
+      .well
         = haml :upload

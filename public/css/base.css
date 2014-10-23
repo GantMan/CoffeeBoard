@@ -2,31 +2,12 @@ body {
   font-family: helvetica;
 }
 
-.header img {
-  width: 44em;
-  display: block;
-  margin: 0 auto;
-}
-
-.content {
-  width: 44em;
-  padding: 90px 0 10px 0;
-  margin: -100px auto 0 auto;
-  background-color: #71c535;
-  border-radius: 5px;
-}
-
-h1 {
-  text-align: right;
-  margin: -51px 10px 39px 0;
-  text-decoration: underline;
-}
-
-h2 {
-  text-align: right;
-  margin: 300px 10px 0px 340px;
-  font-size: 1.3em;
-  position: absolute;
+.header {
+  background-image: url(../images/header.png);
+  min-height: 350px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
 hr {
@@ -34,10 +15,6 @@ hr {
   border-color: #ccc;
   border-style: dashed;
   opacity: 0.5;
-}
-
-p {
-  padding: 0 20px;
 }
 
 .file {
