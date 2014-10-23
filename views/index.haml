@@ -1,9 +1,16 @@
-%h1 Scroll Select
-%h2 Choose your Coffee-Board image
-%hr
-%p
-  %strong Scroll Files
-  %ul.scroll_list
+.row
+  .scroll_list
     - @image_files.each do |file|
-      %li.file
-        = link_to "/set_scroll/#{file}", file
+      .col-md-2
+        .panel.panel-success
+          .panel-heading
+            %h3.panel-title
+              %strong
+                = file
+          .panel-body
+            %img{src: "http://beta.soulscode.com/wp-content/uploads/2011/04/BOB-BUMPER-STICKER-Life-is-short2.jpg"}
+            %hr
+            .row.center-block
+              = link_to "/set_scroll/#{file}", "<i class='fa fa-check-circle-o fa-2x'></i>", class: "btn btn-xs btn-primary col-md-5 col-md-offset-1"
+              = link_to "#", "<i class='fa fa-trash-o fa-2x'></i>", class: "btn btn-xs btn-danger col-md-5 col-md-offset-1"
+
