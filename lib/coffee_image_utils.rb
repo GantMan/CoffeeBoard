@@ -1,6 +1,4 @@
 module CoffeeImageUtils
-  SCROLL_FOLDER = "./scroll_files"
-  CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
 
   def get_file_name file_path
     file_path.match('([^\/]+)\..+$')[1]
@@ -10,13 +8,17 @@ module CoffeeImageUtils
   def process_ppm file, name
     image = MiniMagick::Image.open(file)
 
+    #First make thumbnail
+    image.format "JPEG"
+    image.write "#{THUMBNAIL_FOLDER}/#{name}.jpg"
+
     # Assure format converted to PPM
     image.format "PPM" unless image.type == "PPM"
-
     # Assure size is at least 16 high
     image.resize "x#{BOARD_HEIGHT}" if image.height > BOARD_HEIGHT
-
     image.write "#{SCROLL_FOLDER}/#{name}.ppm"
+
+
   end
   module_function :process_ppm
 
@@ -27,6 +29,7 @@ module CoffeeImageUtils
 
   def remove file
     File.delete("#{SCROLL_FOLDER}/#{file}.ppm")
+    File.delete("#{THUMBNAIL_FOLDER}/#{file}.jpg")
   end
   module_function :remove
 
