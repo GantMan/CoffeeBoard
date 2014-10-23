@@ -1,6 +1,8 @@
 .row
   .scroll_list
-    - @image_files.each do |file|
+    - @image_files.each_with_index do |file, index|
+      - if (index % 6).zero?
+        .clearfix
       .col-md-2
         .panel.panel-success
           .panel-heading
@@ -8,7 +10,8 @@
               %strong
                 = file
           .panel-body
-            %img{src: "images/thumbnails/#{file}.jpg"}
+            %a{href: "images/thumbnails/#{file}.jpg", target: "_blank"}
+              %img{src: "images/thumbnails/#{file}.jpg"}
             %hr
             .row.center-block
               = link_to "/set_scroll/#{file}", "<i class='fa fa-check-circle-o fa-2x'></i>", class: "btn btn-xs btn-primary col-md-5 col-md-offset-1"
