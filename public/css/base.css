@@ -24,8 +24,9 @@ h1 {
 
 h2 {
   text-align: right;
-  margin: -35px 10px 0px 0;
+  margin: 300px 10px 0px 340px;
   font-size: 1.3em;
+  position: absolute;
 }
 
 hr {
@@ -45,6 +46,7 @@ p {
   padding: 2px 6px;
   border-radius: 5px;
   margin: 3px 10px;
+  text-align: center;
 }
 
 .file a {

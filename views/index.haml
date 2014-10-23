@@ -1,8 +1,7 @@
-%h1 Scroll Select
 %h2 Choose your Coffee-Board image
 %hr
 %p
   .scroll_list
     - @image_files.each do |file|
-      .file.col-md-3
+      .file.col-md-2
         = link_to "/set_scroll/#{file}", file
