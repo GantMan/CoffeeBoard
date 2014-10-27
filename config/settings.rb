@@ -3,6 +3,10 @@ SCROLL_FOLDER = "./scroll_files"
 THUMBNAIL_FOLDER = "./public/images/thumbnails"
 CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
 
+# Admin creds
+UN = "admin"
+PW = "coffee"
+
 # Require passwords or allow the public to change the board?
 PUBLIC_VIEW = true
 PUBLIC_DELETE = false #todo
