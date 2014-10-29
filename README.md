@@ -23,3 +23,6 @@ When editing the `/etc/rc.local` to kick off the Sinatra app with this explicit 
 This is a playful low-priority project for me.  I hope to continue to advance features identified in the [issue tracker](https://github.com/GantMan/CoffeeBoard/issues)
 
 Biggest roadmap item that is not an enhancement is to add tests.
+
+#### If you use this project in any way, please let me know!  
+![CoffeeBoard Logo](http://i.imgur.com/c401IwO.jpg)
