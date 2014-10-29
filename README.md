@@ -1,9 +1,8 @@
-CoffeeBoard
-===========
-
-![CoffeeBoard](http://i.imgur.com/lZQFmTt.gif)
+![CoffeeBoard Logo](http://i.imgur.com/c401IwO.jpg)
 
 ### A lovely web-driven billboard to hang over the coffee, powered by a simple Sinatra app on the Raspberry Pi.
+
+![CoffeeBoard](http://i.imgur.com/lZQFmTt.gif)
 
 #### Setup Steps
 
@@ -25,4 +24,4 @@ This is a playful low-priority project for me.  I hope to continue to advance fe
 Biggest roadmap item that is not an enhancement is to add tests.
 
 #### If you use this project in any way, please let me know!  
-![CoffeeBoard Logo](http://i.imgur.com/c401IwO.jpg)
+
