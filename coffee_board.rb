@@ -13,7 +13,7 @@ class CoffeeBoard < Sinatra::Base
     # kill previous runs
     `sudo pkill led-matrix`
     # run in a forked process
-    command = "sudo #{CODE_FOLDER}/led-matrix 1 #{SCROLL_FOLDER}/#{params[:file]}.ppm"
+    command = "sudo #{CODE_FOLDER}/led-matrix 1 '#{SCROLL_FOLDER}/#{params[:file]}.ppm'"
     fork { exec command }
 
     redirect back
