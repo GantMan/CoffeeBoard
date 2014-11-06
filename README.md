@@ -8,6 +8,8 @@
 
 * This simple website can be run on the Raspberry Pi to easily display amazing 16x32 LED scrolling images. Firstly, make sure you have [set up your 16x32 board](https://learn.adafruit.com/connecting-a-16x32-rgb-led-matrix-panel-to-a-raspberry-pi).
 
+* If you're using a 32x32 or higher LED matrix display, switch your C app to [the updated version](https://github.com/hzeller/rpi-rgb-led-matrix) and connect GPIO Pin 10 to address D.
+
 * Also make sure you've installed imagemagick with `sudo apt-get install imagemagick`
 
 * Then make sure you have [Ruby ready to roll](http://www.iconoclastlabs.com/blog/ruby-on-rails-on-the-raspberry-pi-b-with-rbenv).
