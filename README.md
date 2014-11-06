@@ -25,5 +25,5 @@ This is a playful low-priority project for me.  I hope to continue to advance fe
 
 Biggest roadmap item that is not an enhancement is to add tests.
 
-#### If you use this project in any way, please let me know!  
+#### I enjoy seeing my code in the wild!  Please email me pics of yours!
 
