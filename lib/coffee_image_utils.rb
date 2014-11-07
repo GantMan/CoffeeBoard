@@ -34,7 +34,11 @@ module CoffeeImageUtils
   module_function :remove
 
   def make_ip_file
-    `convert -background black -fill white -gravity center -size 200x30 caption:"192.168.1.1" black.png +swap -gravity south -composite -resize 222x32 anno_caption.jpg`
+    #ip_address = `hostname -I`
+    blank_file = SYS_SCROLLS_FOLDER + "/blank.ppm"
+    ip_file = SYS_SCROLLS_FOLDER + "/ip.ppm"
+    `convert -background black -fill white -gravity center -size 200x30 caption:"192.168.1.1" #{blank_file} +swap -composite -resize 222x32 #{ip_file}`
   end
+  module_function :make_ip_file
 
 end
