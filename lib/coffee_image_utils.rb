@@ -33,4 +33,11 @@ module CoffeeImageUtils
   end
   module_function :remove
 
+  def make_ip_file
+
+    convert -background '#000' -fill white -gravity center -size 200x30 \
+          caption:"192.168.1.1" \
+          black.png +swap -gravity south -composite -resize 222x32 anno_caption.jpg
+  end
+
 end
