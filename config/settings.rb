@@ -1,6 +1,10 @@
 # Folder Paths Constants
-SCROLL_FOLDER = "./scroll_files"
-THUMBNAIL_FOLDER = "./public/images/thumbnails"
+COFFEE_FOLDER = File.dirname(File.expand_path("..",__FILE__))
+SCROLL_FOLDER = File.join(COFFEE_FOLDER, "scroll_files")
+SYS_SCROLLS_FOLDER = File.join(SCROLL_FOLDER, "system_scrolls") #scroll images used by this app
+THUMBNAIL_FOLDER = File.join(COFFEE_FOLDER, "public/images/thumbnails")
+
+# It's likely you'll need to modify this path
 CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
 
 # Admin creds
