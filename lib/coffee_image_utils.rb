@@ -31,12 +31,28 @@ module CoffeeImageUtils
   end
   module_function :remove
 
-  def make_ip_file
+  def make_and_scroll_ip_file
     ip_address = `hostname -I`
     blank_file = SYS_SCROLLS_FOLDER + "/blank.ppm"
     ip_file = SYS_SCROLLS_FOLDER + "/ip.ppm"
     `convert -background black -fill white -gravity center -size 200x30 caption:"#{ip_address}" #{blank_file} +swap -composite -resize 222x32 #{ip_file}`
+    scroll_file("ip", SYS_SCROLLS_FOLDER)
   end
-  module_function :make_ip_file
+  module_function :make_and_scroll_ip_file
+
+  def scroll_file (file_name, folder=SCROLL_FOLDER)
+    # kill previous runs
+    `sudo pkill led-matrix`
+    # run in a separate process
+    case CODE_ENGINE
+    when :adafruit
+      command = "sudo #{CODE_FOLDER}/led-matrix 1 '#{folder}/#{file_path}.ppm'"
+    when :hzeller
+      command = "sudo #{CODE_FOLDER}/led-matrix -r #{BOARD_HEIGHT} -D 1 '#{SCROLL_FOLDER}/#{file_name}.ppm'"
+    end
+
+    fork { exec command }
+  end
+  module_function :scroll_file
 
 end
