@@ -6,13 +6,20 @@
 
 #### Setup Steps
 
-* This simple website can be run on the Raspberry Pi to easily display amazing 16x32 LED scrolling images. Firstly, make sure you have [set up your 16x32 board](https://learn.adafruit.com/connecting-a-16x32-rgb-led-matrix-panel-to-a-raspberry-pi).
+This simple website can be run on the Raspberry Pi to easily display amazing 16x32 or 32x32 LED scrolling images. To set up your own CoffeeBoard, follow these simple steps.
 
-* If you're using a 32x32 or higher LED matrix display, switch your C app to [the updated version](https://github.com/hzeller/rpi-rgb-led-matrix) and connect GPIO Pin 10 to address D.
+* Firstly, make sure you have your LED matrix set up correctly.  You can follow this tutorial for [setting up a 16x32 board](https://learn.adafruit.com/connecting-a-16x32-rgb-led-matrix-panel-to-a-raspberry-pi).
 
-* Also make sure you've installed imagemagick with `sudo apt-get install imagemagick`
+* You then need to switch your C app to [the updated version](https://github.com/hzeller/rpi-rgb-led-matrix) and connect GPIO Pin 10 to address D if you're using a 32x32 display.
+![32x32 LED GPIO](https://raw.githubusercontent.com/GantMan/CoffeeBoard/master/_art/pins.png)
 
-* Then make sure you have [Ruby ready to roll](http://www.iconoclastlabs.com/blog/ruby-on-rails-on-the-raspberry-pi-b-with-rbenv).
+* Make sure you've installed imagemagick with `sudo apt-get install imagemagick`
+
+* Then make sure you have [Ruby ready to roll on your Pi](http://www.iconoclastlabs.com/blog/ruby-on-rails-on-the-raspberry-pi-b-with-rbenv).
+
+* Pull down this code and modify `config/settings` to fit your particulars.
+
+**That's it!**  Run by typing `rackup` in the CoffeeBoard folder
 
 > To see more pictures/info/details on the process, you can see my release blog post here: [Coffe-Board a website powered social image scroller](http://www.iconoclastlabs.com/blog/website-powered-social-image-scroller-coffeeboard)
 
