@@ -18,7 +18,7 @@ class CoffeeBoard < Sinatra::Base
       command = "sudo #{CODE_FOLDER}/led-matrix 1 '#{SCROLL_FOLDER}/#{params[:file]}.ppm'"
       fork { exec command }
     when :hzeller
-      command = "sudo #{CODE_FOLDER}/led-matrix -d -D 1 '#{SCROLL_FOLDER}/#{params[:file]}.ppm'"
+      command = "sudo #{CODE_FOLDER}/led-matrix -d -r #{BOARD_HEIGHT} -D 1 '#{SCROLL_FOLDER}/#{params[:file]}.ppm'"
     end
 
     redirect back
