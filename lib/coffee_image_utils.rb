@@ -46,7 +46,7 @@ module CoffeeImageUtils
     # run in a separate process
     case CODE_ENGINE
     when :adafruit
-      command = "sudo #{CODE_FOLDER}/led-matrix 1 '#{folder}/#{file_path}.ppm'"
+      command = "sudo #{CODE_FOLDER}/led-matrix 1 '#{folder}/#{file_name}.ppm'"
     when :hzeller
       command = "sudo #{CODE_FOLDER}/led-matrix -r #{BOARD_HEIGHT} -D 1 '#{SCROLL_FOLDER}/#{file_name}.ppm'"
     end
