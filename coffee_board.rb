@@ -12,9 +12,14 @@ class CoffeeBoard < Sinatra::Base
     protected! unless PUBLIC_CHANGE
     # kill previous runs
     `sudo pkill led-matrix`
-    # run in a forked process
-    command = "sudo #{CODE_FOLDER}/led-matrix 1 '#{SCROLL_FOLDER}/#{params[:file]}.ppm'"
-    fork { exec command }
+    # run in a separate process
+    case CODE_ENGINE
+    when :adafruit
+      command = "sudo #{CODE_FOLDER}/led-matrix 1 '#{SCROLL_FOLDER}/#{params[:file]}.ppm'"
+      fork { exec command }
+    when :hzeller
+      command = "sudo #{CODE_FOLDER}/led-matrix -d -D 1 '#{SCROLL_FOLDER}/#{params[:file]}.ppm'"
+    end
 
     redirect back
   end
