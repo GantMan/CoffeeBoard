@@ -5,7 +5,8 @@ SYS_SCROLLS_FOLDER = File.join(SCROLL_FOLDER, "system_scrolls") #scroll images u
 THUMBNAIL_FOLDER = File.join(COFFEE_FOLDER, "public/images/thumbnails")
 
 # It's likely you'll need to modify this path
-CODE_FOLDER = "/home/pi/display16x32/rpi-rgb-led-matrix"
+CODE_FOLDER = "/home/pi/rpi-rgb-led-matrix"
+CODE_ENGINE = :hzeller  # could also be :adafruit
 
 # Admin creds
 UN = "admin"

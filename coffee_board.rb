@@ -10,12 +10,7 @@ class CoffeeBoard < Sinatra::Base
 
   get '/set_scroll/:file' do
     protected! unless PUBLIC_CHANGE
-    # kill previous runs
-    `sudo pkill led-matrix`
-    # run in a forked process
-    command = "sudo #{CODE_FOLDER}/led-matrix 1 '#{SCROLL_FOLDER}/#{params[:file]}.ppm'"
-    fork { exec command }
-
+    scroll_file params[:file]
     redirect back
   end
 
@@ -25,14 +20,14 @@ class CoffeeBoard < Sinatra::Base
 
     uploaded_file = params[:file][:tempfile].path
     name = get_file_name(params[:file][:filename])
-    CoffeeImageUtils::process_ppm(uploaded_file, name)
+    process_ppm(uploaded_file, name)
 
     redirect back
   end
 
   get '/delete/:file' do
     protected! unless PUBLIC_DELETE
-    CoffeeImageUtils::remove(params[:file])
+    remove(params[:file])
     redirect back
   end
 
