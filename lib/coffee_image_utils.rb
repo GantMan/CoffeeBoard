@@ -8,7 +8,7 @@ module CoffeeImageUtils
   def process_ppm file, name
     image = MiniMagick::Image.open(file)
     # second variable needed so JPEG artifacts are not passed on
-    thumbnail = image.dup
+    thumbnail = MiniMagick::Image.open(file)
 
     #First make thumbnail
     thumbnail.format "JPEG"
