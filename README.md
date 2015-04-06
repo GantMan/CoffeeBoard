@@ -25,7 +25,7 @@ This simple website can be run on the Raspberry Pi to easily display amazing 16x
 
 #### Assure it runs on startup
 When editing the `/etc/rc.local` to kick off the Sinatra app with this explicit command.
-`sudo -u pi /home/pi/.rbenv/versions/2.1.2/bin/ruby /home/pi/.rbenv/versions/2.1.2/bin/rackup /home/pi/CoffeeBoard/config.ru`
+`sudo /home/pi/.rbenv/versions/2.1.2/bin/ruby /home/pi/.rbenv/versions/2.1.2/bin/rackup -p 80 /home/pi/CoffeeBoard/config.ru`
 
 #### Presentation
 Slides: http://slides.com/gantlaborde/coffeeboard/live#/
